@@ -73,6 +73,20 @@ async function handler({
   connectionString,
   client,
 }: Options) {
+  console.log("starting with options", {
+    clientCount,
+    streamCount,
+    requestCount,
+    streamPrefix,
+    deterministicStreamSelection,
+    batchSize,
+    maxInFlight,
+    worker_count,
+    size,
+    connectionString,
+    client,
+  });
+
   const streams = Array.from({ length: streamCount }, (_, i) =>
     streamPrefix != null ? `${streamPrefix}-${i}` : uuid()
   );

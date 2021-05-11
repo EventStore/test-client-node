@@ -50,7 +50,7 @@ const wrfl: CommandModule<{}, Options> = {
     },
     worker_count: {
       type: "number",
-      default: cpus().length - 1,
+      default: Math.max(cpus().length - 1, 1),
     },
     max_in_flight: {
       type: "number",
